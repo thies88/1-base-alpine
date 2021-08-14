@@ -1,9 +1,17 @@
-FROM alpine:3.11 as rootfs-stage
+# Set global vars
+ARG REL=3.13
+ARG ARCH=x86_64
+
+FROM alpine:3.12 as rootfs-stage
 MAINTAINER thies88
 
+# Set local vars for rootfs-stage
+ARG REL 
+ENV REL=${REL}
+ARG ARCH
+ENV ARCH=${ARCH}
+
 # environment for our temp builder image
-ENV REL=v3.12
-ENV ARCH=x86_64
 ENV MIRROR=http://dl-cdn.alpinelinux.org/alpine
 #ENV MIRROR=http://nl.alpinelinux.org/alpine
 ENV PACKAGES=alpine-baselayout,\
@@ -38,6 +46,12 @@ RUN \
 # Runtime stage: Create actual base image from scratch
 FROM scratch
 COPY --from=rootfs-stage /root-out/ /
+
+#runtime vars
+ARG REL
+ENV REL=${REL}
+ARG ARCH
+ENV ARCH=${ARCH}
 ARG BUILD_DATE
 ARG VERSION
 LABEL build_version="Alpine-baseimage-from-scratch version:- ${VERSION} Build-date:- ${BUILD_DATE}"
