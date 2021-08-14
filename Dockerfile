@@ -1,5 +1,5 @@
 # Set global vars
-ARG REL=3.13
+ARG REL=v3.13
 ARG ARCH=x86_64
 
 FROM alpine:3.12 as rootfs-stage
