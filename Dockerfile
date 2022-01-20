@@ -58,7 +58,7 @@ LABEL build_version="Alpine-baseimage-from-scratch version:- ${VERSION} Build-da
 LABEL MAINTAINER="thies88, Thnx to: sparkyballs,TheLamer"
 
 # set version for s6 overlay
-ARG OVERLAY_VERSION="v2.1.0.3"
+ARG OVERLAY_VERSION="v2.1.0.2"
 #ARG OVERLAY_VERSION="v2.2.0.3"
 ARG OVERLAY_ARCH="amd64"
 
