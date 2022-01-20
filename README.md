@@ -1,6 +1,6 @@
 A fork of: https://github.com/linuxserver/docker-baseimage-alpine
 
-Image size: 18,9 MB
+Image size: 19,4 MB
 
 Added: repository: edge(main, community and testing)
 
