@@ -1,8 +1,8 @@
 # Set global vars
-ARG REL=v3.13
+ARG REL=v3.17
 ARG ARCH=x86_64
 
-FROM alpine:3.12 as rootfs-stage
+FROM alpine:3.17 as rootfs-stage
 MAINTAINER thies88
 
 # Set local vars for rootfs-stage
