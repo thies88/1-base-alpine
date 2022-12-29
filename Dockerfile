@@ -7,7 +7,7 @@ MAINTAINER thies88
 
 # Set local vars for rootfs-stage
 ARG REL 
-ENV REL="v${REL}"
+ENV REL=v${REL}
 ARG ARCH
 ENV ARCH=${ARCH}
 
